@@ -1,0 +1,32 @@
+Character Level:
+h: Move cursor left (←)
+j: Move cursor down (↓)
+k: Move cursor up (↑)
+l: Move cursor right (→)
+
+Word Level:
+w: Move to the beginning of the next word.
+e: Move to the end of the next word.
+b: Move to the beginning of the previous word.
+ge: Move to the end of the previous word.
+    (Note: "word" typically means alphanumeric characters or other non-blank characters separated by whitespace.)
+
+Line Level:
+0 (zero): Move to the very beginning of the current line.
+^: Move to the first non-blank character of the current line.
+$: Move to the very end of the current line.
+
+Screen Level:
+H: Move to the top line of the current screen.
+M: Move to the middle line of the current screen.
+L: Move to the bottom line of the current screen.
+
+File Level:
+gg: Move to the beginning of the file (line 1).
+G: Move to the end of the file (last line).
+:N<CR> or Ngg: Move to line number N (replace N with the line number and press Enter or gg).
+
+Counts:
+You can often precede these motions with a number to repeat the action. For example:
+5j: Move down 5 lines.
+3w: Move forward 3 words.
