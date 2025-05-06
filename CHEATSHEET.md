@@ -60,3 +60,35 @@
 | Open Lazy.nvim plugin UI | `<leader> l` |
 | Open Mason UI (LSP mgr)  | `<leader> m` |
 | Open file tree (netrw)   | `:Ex`        |
+
+## Visual Mode
+
+| Action                                              | Shortcut              |
+| --------------------------------------------------- | --------------------- |
+| Enter visual mode                                   | `v`                   |
+| Enter visual line mode                              | `V`                   |
+| Enter block (column) mode                           | `<C-v>`               |
+| Indent selection right                              | `>`                   |
+| Indent selection left                               | `<`                   |
+| Comment selection (with plugin like `Comment.nvim`) | `gc` (in visual mode) |
+| Yank selection                                      | `y`                   |
+| Delete selection                                    | `d`                   |
+| Paste over selection                                | `p`                   |
+
+## Telescope Extensions (like ui-select, projects)
+
+| Extension   | What it does                            | Shortcut *(if mapped)*       |
+| ----------- | --------------------------------------- | ---------------------------- |
+| `ui-select` | Makes code actions, etc., use Telescope | Used automatically           |
+| `projects`  | Switch between Git projects             | `<leader> s p` *(if mapped)* |
+| `frecency`  | Sort files by recency + frequency       | Not in Kickstart by default  |
+
+## Macros
+
+| Action                            | Shortcut        |
+| --------------------------------- | --------------- |
+| Start recording into register `a` | `qa`            |
+| Do stuff…                         | (your commands) |
+| Stop recording                    | `q`             |
+| Replay macro from `a`             | `@a`            |
+| Repeat last macro                 | `@@`            |
