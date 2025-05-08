@@ -200,6 +200,23 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
+-- try to map semicolon out of autocompleted function
+vim.keymap.set('i', ';', function()
+  local col = vim.fn.col '.'
+  local line = vim.fn.getline '.'
+  local char_under = line:sub(col, col)
+
+  if char_under == ')' then
+    return '<Right>;'
+  end
+
+  return ';'
+end, { expr = true, desc = 'Smart semicolon outside parens' })
+
+-- Don't overwrite yank register on delete or single-char delete
+vim.keymap.set({ 'n', 'v' }, 'd', '"_d')
+vim.keymap.set('n', 'x', '"_x')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -827,7 +844,7 @@ require('lazy').setup({
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'default',
+        preset = 'super-tab',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
