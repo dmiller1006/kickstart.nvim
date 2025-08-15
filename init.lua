@@ -104,6 +104,13 @@ vim.o.number = true
 --  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
+-- Tabs: 4-wide hard tabs by default
+vim.opt.tabstop = 4 -- visual width of a <Tab>
+vim.opt.shiftwidth = 4 -- indent/outdent amount
+vim.opt.softtabstop = 4 -- how many spaces a <Tab> feels like while editing
+vim.opt.expandtab = false -- use real tabs, not spaces
+vim.opt.smarttab = true -- <Tab> at line start uses shiftwidth
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
 
